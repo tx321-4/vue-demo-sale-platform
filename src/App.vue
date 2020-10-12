@@ -38,7 +38,7 @@ export default {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+
   color: #444;
   font-size: 14px;
 }
@@ -95,5 +95,12 @@ a {
   height: 1px;
   width: 100%;
   background: #ddd;
+}
+.button {
+  background: #4fc08d;
+  color: #fff;
+  display: inline-block;
+  padding: 10px 20px;
+  cursor: pointer;
 }
 </style>

@@ -46,6 +46,7 @@ a {
   color: inherit;
   text-decoration: none;
 }
+
 .app-head {
   background: #363636;
   color: #b2b2b2;

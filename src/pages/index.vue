@@ -49,6 +49,7 @@
 
 <script>
 import slideShow from '../components/slideShow'
+import { GetNewList } from '@/api/newlist'
 export default {
   name: 'IndexPage',
   components: {
@@ -56,6 +57,7 @@ export default {
   },
   data () {
     return {
+      newsList: [],
       productList: {
         pc: {
           title: 'PC产品',
@@ -157,6 +159,13 @@ export default {
         }
       ]
     }
+  },
+  created: function () {
+    GetNewList().then((res) => {
+      this.newsList = res.data
+    }, (err) => {
+      console.log(err)
+    })
   }
 }
 </script>
@@ -193,6 +202,9 @@ export default {
 .index-left-block h3 {
   padding: 0 15px 5px 15px;
   font-weight: bold;
+  color: #222;
+}
+.index-left-block a {
   color: #222;
 }
 .index-left-block ul {

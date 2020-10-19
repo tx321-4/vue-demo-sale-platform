@@ -45,10 +45,18 @@
 </template>
 
 <script>
+import VSelection from '../components/base/selection'
+import VDatePicker from '../components/base/datepicker'
+import { getOrderList } from '@/api/orderlist'
 export default {
   name: 'orderlist2',
+  components: {
+    VSelection,
+    VDatePicker
+  },
   data () {
     return {
+      query: '',
       products: [
         {
           label: '数据统计',
@@ -106,13 +114,24 @@ export default {
       this.getList()
     }
   },
+  mounted () {
+    this.getList()
+  },
   methods: {
     productChange (obj) {
       this.productId = obj.value
       this.getList()
     },
     getList () {
-
+      let reqParams = {
+        query: this.query,
+        productId: this.productId,
+        startDate: this.startDate,
+        endDate: this.endDate
+      }
+      getOrderList(reqParams).then((res) => {
+        this.tableData = res.data
+      })
     },
     getStartDate () {
 

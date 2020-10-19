@@ -1,6 +1,6 @@
 <template>
   <div class="selection-component">
-    <div class="selsection-show" @click="toggleDrop">
+    <div class="selection-show" @click="toggleDrop">
       <span>{{ selections[nowIndex].label }}</span>
       <div class="arrow"></div>
     </div>

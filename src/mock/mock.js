@@ -1,6 +1,7 @@
 import axios from 'axios'
 import MockAdapter from 'axios-mock-adapter'
 import { NewList } from './data/newlist'
+import { OrderList } from './data/orderlist'
 
 export default {
   bootstrap () {
@@ -59,6 +60,14 @@ export default {
 
     mock.onPost('/checkOrder').reply(config => {
       const result = {}
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          resolve([200, result])
+        }, 1000)
+      })
+    })
+    mock.onPost('/getOrderList').reply(config => {
+      const result = OrderList
       return new Promise((resolve, reject) => {
         setTimeout(() => {
           resolve([200, result])

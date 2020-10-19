@@ -48,5 +48,22 @@ export default {
         }, 1000)
       })
     })
+    mock.onPost('/createOrder').reply(config => {
+      const result = {}
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          resolve([200, result])
+        }, 1000)
+      })
+    })
+
+    mock.onPost('/checkOrder').reply(config => {
+      const result = {}
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          resolve([200, result])
+        }, 1000)
+      })
+    })
   }
 }
